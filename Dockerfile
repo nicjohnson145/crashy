@@ -10,3 +10,4 @@ RUN CGO_ENABLED=0 go build
 FROM scratch
 COPY --from=builder /src/crashy /bin/crashy
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+ENTRYPOINT ["/bin/crashy"]
