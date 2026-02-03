@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: crashy
-        image: ghcr.io/nicjohnson145/crashy:lastest
+        image: ghcr.io/nicjohnson145/crashy:latest
         ports:
         - containerPort: 8080
         envFrom:
