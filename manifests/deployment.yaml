@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crashy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crashy
+  template:
+    metadata:
+      labels:
+        app: crashy
+    spec:
+      containers:
+      - name: crashy
+        image: ghcr.io/nicjohnson145/crashy:lastest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: crashy-config
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+          limits:
+            cpu: 10m
+            memory: 50Mi

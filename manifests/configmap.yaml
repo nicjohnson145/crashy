@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crashy-config
+data:
+  DIE_AFTER: "${DIE_AFTER}"
